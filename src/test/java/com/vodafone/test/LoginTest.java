@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.vodafone.base.AutomationWrapper;
 import com.vodafone.pages.DashboardPage;
 import com.vodafone.pages.LoginPage;
+import com.vodafone.utils.DataUtils;
 
 public class LoginTest extends AutomationWrapper {
 
@@ -20,18 +21,14 @@ public class LoginTest extends AutomationWrapper {
 		Assert.assertEquals(dashboard.getQuickLaunchText(), "Quick Launch");
 	}
 
-	@Test
-	public void invalidLoginTest() {
+	@Test(dataProviderClass = DataUtils.class,dataProvider = "invalidLoginData")
+	public void invalidLoginTest(String username, String password, String expectedError) {
 		LoginPage login = new LoginPage(driver);
-		login.enterUsername("john");
-		login.enterPassword("admin123");
+		login.enterUsername(username);
+		login.enterPassword(password);
 		login.clickOnLogin();
 
 		String actualError = login.getInvalidErrorMessage();
-		Assert.assertEquals(actualError, "Invalid credentials");
+		Assert.assertEquals(actualError, expectedError);
 	}
 }
-
-
-
-
