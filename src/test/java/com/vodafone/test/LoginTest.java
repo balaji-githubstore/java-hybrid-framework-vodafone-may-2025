@@ -30,5 +30,8 @@ public class LoginTest extends AutomationWrapper {
 		String actualError = login.getInvalidErrorMessage();
 		Assert.assertEquals(actualError, "Invalid credentials");
 	}
-
 }
+
+
+
+
