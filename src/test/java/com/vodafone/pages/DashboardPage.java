@@ -3,16 +3,19 @@ package com.vodafone.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DashboardPage {
+import com.vodafone.base.WebDriverKeywords;
+
+public class DashboardPage extends WebDriverKeywords {
 	private By quickLaunchLocator = By.xpath("//p[contains(normalize-space(),'Quick')]");
 
 	private WebDriver driver;
 
 	public DashboardPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 
 	public String getQuickLaunchText() {
-		return driver.findElement(quickLaunchLocator).getText();
+		return getTextFromElement(quickLaunchLocator);
 	}
 }
