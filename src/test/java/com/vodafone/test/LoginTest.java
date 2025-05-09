@@ -10,7 +10,7 @@ import com.vodafone.utils.DataUtils;
 
 public class LoginTest extends AutomationWrapper {
 
-	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
+	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider",groups = {"login","smoke"})
 	public void validLoginTest(String username,String password,String expectedValue) {
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername(username);
@@ -21,7 +21,7 @@ public class LoginTest extends AutomationWrapper {
 		Assert.assertEquals(dashboard.getQuickLaunchText(), expectedValue);
 	}
 
-	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
+	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider",groups = {"login"})
 	public void invalidLoginTest(String username, String password, String expectedError) {
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername(username);

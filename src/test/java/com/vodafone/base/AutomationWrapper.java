@@ -15,9 +15,10 @@ public class AutomationWrapper {
 
 	protected WebDriver driver;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	@Parameters({ "browser" })
 	public void setup(@Optional("ch") String browserName) {
+		
 		if (browserName.equalsIgnoreCase("edge")) {
 			driver = new EdgeDriver();
 		} else if (browserName.equalsIgnoreCase("ff")) {
@@ -31,7 +32,7 @@ public class AutomationWrapper {
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void teardown() {
 
 		driver.quit();

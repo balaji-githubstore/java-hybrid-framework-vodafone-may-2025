@@ -3,7 +3,8 @@ package com.vodafone.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage
+{
 	private By usernameLocator = By.name("username");
 	private By passwordLocator = By.name("password");
 	private By loginLocator = By.xpath("//button[normalize-space()='Login']");

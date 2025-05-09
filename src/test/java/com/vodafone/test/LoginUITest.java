@@ -8,13 +8,13 @@ import com.vodafone.base.AutomationWrapper;
 
 public class LoginUITest extends AutomationWrapper {
 	
-	@Test
+	@Test(groups = {"smoke","ui"})
 	public void titleTest() {
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle, "OrangeHRM");
 	}
 
-	@Test
+	@Test(groups = {"ui"})
 	public void headerTitle() {
 		// Assert the header - Login
 		String actualHeader = driver.findElement(By.xpath("//h5")).getText();
