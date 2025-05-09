@@ -7,9 +7,9 @@
 	<test thread-count="5" name="Login Test Edge">
 		<classes>
 			
-			<class name="com.vodafone.test.LoginTest" >
+			<class name="com.vodafone.test.LoginUITest" >
 				<methods>
-					<include name="validLoginTest"></include>
+					<include name="titleTest"></include>
 				</methods>
 			</class>
 
