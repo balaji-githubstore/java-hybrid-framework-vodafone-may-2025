@@ -2,7 +2,9 @@ package com.vodafone.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+/**
+ * Handles all element of login page
+ */
 public class LoginPage
 {
 	private By usernameLocator = By.name("username");
